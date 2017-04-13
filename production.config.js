@@ -10,7 +10,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'index.js',
-        library: 'wikomData',
+        library: 'wikomForm',
         libraryTarget: 'umd',
         umdNamedDefine: true
     },
