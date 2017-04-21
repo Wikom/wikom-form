@@ -6,9 +6,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Datetime from 'react-datetime'
 import moment from 'moment'
+import {Field} from 'redux-form'
 import styles from 'react-datetime/css/react-datetime.css'
 
-const Datepicker = ({input: {name, value, ...input}, ...rest}) => {
+const Datepicker = ({input: {name, value, disabled, ...input}, ...rest}) => {
     const format = "DD.MM.YYYY";
 
     const onChange = function (a) {
@@ -19,6 +20,17 @@ const Datepicker = ({input: {name, value, ...input}, ...rest}) => {
 
     value = value ? moment.utc(value) : null;
 
+    if(disabled){
+        return  <Field
+            name={name}
+            value={value}
+            component="input"
+            className="form-control"
+            disabled={true}
+            onChange={onChange}
+            onBlur={input.onChange}
+        />;
+    }
     return <Datetime
         name={name}
         value={value}
