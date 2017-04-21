@@ -21,6 +21,8 @@ const Datepicker = ({input: {name, value, disabled, ...input}, ...rest}) => {
     value = value ? moment.utc(value) : null;
 
     if(disabled){
+        console.log('disabled datepicker', disabled, input, name, value, disabled);
+
         return  <Field
             name={name}
             value={value}
