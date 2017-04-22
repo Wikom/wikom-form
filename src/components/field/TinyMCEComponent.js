@@ -7,6 +7,13 @@ import PropTypes from 'prop-types'
 import TinyMCE from 'react-tinymce'
 
 export default (props) => {
+    if(props.disabled){
+        return  <div
+                dangerouslySetInnerHTML={{__html: props.input.value}}
+                className="input-lookalike"
+            />;
+    }
+
     return (
         <TinyMCE
             {...props}
