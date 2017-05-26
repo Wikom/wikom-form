@@ -13,15 +13,15 @@ const Datepicker = ({input: {name, value, ...input}, disabled, ...rest}) => {
     const format = "DD.MM.YYYY";
 
     const onChange = function (a) {
-        if (moment(a, format, true).isValid()) {
+        if (moment(a, format, true).isValid() || a === null || a === "") {
             return input.onChange(a);
         }
     };
 
     value = value ? moment.utc(value) : null;
 
-    if(disabled){
-        return  <div className="input-lookalike">
+    if (disabled) {
+        return <div className="input-lookalike">
             {moment(value).format(format)}
         </div>;
     }
