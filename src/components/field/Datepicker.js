@@ -6,6 +6,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Datetime from 'react-datetime'
 import moment from 'moment'
+import locale from 'moment/locale/de'
 import {Field} from 'redux-form'
 import styles from 'react-datetime/css/react-datetime.css'
 
