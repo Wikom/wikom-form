@@ -11,7 +11,7 @@ const FormErrors = (errors) => {
                 return null;
 
             if (errors.hasOwnProperty('fatal') && errors.fatal[name] || false) {
-                return <div className="text-danger form-error">{errors.fatal[name][0]}</div>;
+                return <div className="text-danger form-error form-error--fatal">{errors.fatal[name][0]}</div>;
             }
             if (errors.hasOwnProperty('errors') && errors.errors[name] || false) {
                 return <div className="text-danger form-error">{errors.errors[name][0]}</div>;
