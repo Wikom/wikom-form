@@ -18,7 +18,7 @@
     "react-select": "^1.0.0-rc.3",
     "react-tinymce": "^0.5.1",
     "react-virtualized-select": "^2.3.0",
-    "redux-form": "^6.5.0",
+    "redux-form": "^6.7.0",
     "wikom-data": "https://github.com/Wikom/wikom-data.git"
   },
   "devDependencies": {

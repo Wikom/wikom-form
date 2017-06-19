@@ -49,7 +49,8 @@ FormWrapper.propTypes = {
 const mapStateToProps = (state, {name, checkUrl, initialValues}) => ({
     form: name,
     asyncValidate: checkUrl ? asyncValidate({name, url: checkUrl}) : false,
-    initialValues: Object.assign({}, initialValuesFromURL(name), initialValues)
+    initialValues: Object.assign({}, initialValuesFromURL(name), initialValues),
+    onChange: checkUrl ? asyncValidate({name, url: checkUrl}) : false
 });
 
 
