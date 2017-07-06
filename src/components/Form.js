@@ -24,7 +24,9 @@ class Form extends React.Component {
     render() {
         return (
             <form onSubmit={this.props.handleSubmit(this.props.onSubmit)}>
-                {this.props.children}
+                {
+                    React.cloneElement(this.props.children, {...this.props})
+                }
             </form>
         );
     }

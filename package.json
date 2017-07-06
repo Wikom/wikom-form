@@ -1,6 +1,6 @@
 {
   "name": "wikom-form",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "main": "lib/index.js",
   "module": "src/index.js",
   "repository": "git@github.com:Wikom/wikom-form.git",
@@ -14,7 +14,6 @@
   "dependencies": {
     "moment": "^2.18.1",
     "query-string": "^4.3.2",
-    "react-datetime": "^2.8.8",
     "react-select": "^1.0.0-rc.3",
     "react-tinymce": "^0.5.1",
     "react-virtualized-select": "^2.3.0",
