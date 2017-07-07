@@ -3,6 +3,7 @@
  */
 
 import Form from './components/Form'
+import SimpleForm from './components/SimpleForm'
 import FormErrors from './components/FormErrors'
 import Select from './components/field/Select'
 import SelectClassic from './components/field/SelectClassic'
@@ -17,6 +18,7 @@ import {buildOptions, initialValuesFromURL, stringifyValue} from './helpers'
 export default Form
 export {
     Form,
+    SimpleForm,
     Select,
     SelectClassic,
     SelectInput,

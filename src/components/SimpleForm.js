@@ -1,5 +1,5 @@
 /**
- * Created by Marvin on 20.03.17.
+ * Created by Marvin on 07.07.17.
  */
 
 import React from 'react'
@@ -9,12 +9,9 @@ import {connect} from 'react-redux'
 import {asyncValidate} from '../actions'
 import {initialValuesFromURL} from '../helpers'
 import findInObject from 'find-in-object'
-import {reset} from 'redux-form'
 import {goBack} from 'react-router-redux'
-import FormErrors from './FormErrors'
-import {formErrorsActions} from '../actions'
 
-class Form extends React.Component {
+class SimpleForm extends React.Component {
     componentDidMount() {
         typeof this.props.asyncValidate === 'function' ? this.props.asyncValidate() : null;
     }
@@ -28,16 +25,13 @@ class Form extends React.Component {
     render() {
         return (
             <form onSubmit={this.props.handleSubmit(this.props.onSubmit)}>
-                {
-                    React.cloneElement(this.props.children, {...this.props})
-                }
+                {this.props.children}
             </form>
         );
     }
-
 }
 
-Form.propTypes = {
+SimpleForm.propTypes = {
     handleSubmit: PropTypes.func.isRequired,
     onSubmit: PropTypes.func.isRequired,
     reset: PropTypes.func.isRequired,
@@ -45,43 +39,20 @@ Form.propTypes = {
     formErrors: PropTypes.object
 };
 
-const FormWrapper = reduxForm()(Form);
+const FormWrapper = reduxForm()(SimpleForm);
 
 FormWrapper.propTypes = {
     name: PropTypes.string.isRequired,
-    checkUrl: PropTypes.string,
-    submitHandler: PropTypes.func.isRequired,
-    successHandler: PropTypes.func
-};
-
-FormWrapper.defaultProps = {
-    successHandler: goBack
+    checkUrl: PropTypes.string
 };
 
 const mapState = (state, {name, checkUrl, initialValues}) => {
-    const {FieldError, hasErrors, isValidated} = FormErrors(findInObject('formErrors.' + name + '.data', state));
-    const submitting = (isValidated() && ((findInObject('form.' + name + '.asyncValidating', state) === true))) ||
-        findInObject('form.' + name + '.submitting', state);
-
     return {
         form: name,
-        FieldError,
-        hasErrors,
-        isValidated,
-        submitting,
         formValues: findInObject('form.' + name + '.values', state),
         initialValues: Object.assign({}, initialValuesFromURL(name), initialValues),
         asyncValidate: checkUrl ? asyncValidate({name, url: checkUrl}) : false,
         onChange: checkUrl ? asyncValidate({name, url: checkUrl}) : false
     }
 };
-
-
-const mapDispatch = (dispatch, {name, submitHandler, successHandler}) => ({
-    reset: () => dispatch(reset(name)),
-    onSubmit: data => dispatch(submitHandler(data))
-        .then(result => dispatch(successHandler(result)))
-        .catch(err => dispatch(formErrorsActions.setFormErrorsFromSubmit(name, err.response.body)))
-});
-
-export default connect(mapState, mapDispatch)(FormWrapper);
+export default connect(mapState)(FormWrapper);

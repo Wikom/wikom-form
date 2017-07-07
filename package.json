@@ -1,6 +1,6 @@
 {
   "name": "wikom-form",
-  "version": "1.4.2",
+  "version": "2.0.0",
   "main": "lib/index.js",
   "module": "src/index.js",
   "repository": "git@github.com:Wikom/wikom-form.git",
@@ -14,11 +14,12 @@
   "dependencies": {
     "moment": "^2.18.1",
     "query-string": "^4.3.2",
+    "react-datepicker": "^0.48.0",
     "react-select": "^1.0.0-rc.3",
     "react-tinymce": "^0.5.1",
     "react-virtualized-select": "^2.3.0",
-    "react-datepicker": "^0.48.0",
     "redux-form": "^6.7.0",
+    "find-in-object": "https://github.com/Wikom/find-in-object.git",
     "wikom-data": "https://github.com/Wikom/wikom-data.git"
   },
   "devDependencies": {
@@ -37,7 +38,8 @@
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.2",
-    "redux": "^3.6.0"
+    "redux": "^3.6.0",
+    "react-router-redux": "^4.0.8"
   },
   "scripts": {
     "start": "npm run babel && npm run webpack",
