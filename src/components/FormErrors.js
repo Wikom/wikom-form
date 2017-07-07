@@ -5,8 +5,7 @@
 import React from 'react'
 
 const FormErrors = (errors) => {
-    return {
-        RenderError: function ({name}) {
+        const FieldError =  function ({name}) {
             if (!errors || !Object.keys(errors).length)
                 return null;
 
@@ -24,7 +23,11 @@ const FormErrors = (errors) => {
             }
 
             return null;
-        },
+        };
+
+    return {
+        FieldError: FieldError,
+        RenderError: FieldError,
 
         //hat schwerwiegenden fehler
         hasErrors: function () {
