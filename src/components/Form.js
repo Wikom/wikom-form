@@ -49,17 +49,6 @@ const FormWrapper = reduxForm({
     asyncBlurFields: ['-']
 })(Form);
 
-FormWrapper.propTypes = {
-    name: PropTypes.string.isRequired,
-    checkUrl: PropTypes.string,
-    submitHandler: PropTypes.func.isRequired,
-    successHandler: PropTypes.func
-};
-
-FormWrapper.defaultProps = {
-    successHandler: goBack
-};
-
 const mapState = (state, {name, checkUrl, initialValues}) => {
     const {FieldError, hasErrors, isValidated} = FormErrors(findInObject('formErrors.' + name + '.data', state));
     const submitting = (isValidated() && ((findInObject('form.' + name + '.asyncValidating', state) === true))) ||
@@ -78,7 +67,6 @@ const mapState = (state, {name, checkUrl, initialValues}) => {
     }
 };
 
-
 const mapDispatch = (dispatch, {name, submitHandler, successHandler}) => ({
     reset: () => dispatch(reset(name)),
     onSubmit: data => dispatch(submitHandler(data))
@@ -86,4 +74,17 @@ const mapDispatch = (dispatch, {name, submitHandler, successHandler}) => ({
         .catch(err => dispatch(formErrorsActions.setFormErrorsFromSubmit(name, err.response.body)))
 });
 
-export default connect(mapState, mapDispatch)(FormWrapper);
+const ConnectedFormWrapper = connect(mapState, mapDispatch)(FormWrapper);
+
+ConnectedFormWrapper.defaultProps = {
+    successHandler: goBack
+};
+
+ConnectedFormWrapper.propTypes = {
+    name: PropTypes.string.isRequired,
+    checkUrl: PropTypes.string,
+    submitHandler: PropTypes.func.isRequired,
+    successHandler: PropTypes.func
+};
+
+export default ConnectedFormWrapper
