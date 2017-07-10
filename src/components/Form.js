@@ -45,7 +45,9 @@ Form.propTypes = {
     formErrors: PropTypes.object
 };
 
-const FormWrapper = reduxForm()(Form);
+const FormWrapper = reduxForm({
+    asyncBlurFields: ['-']
+})(Form);
 
 FormWrapper.propTypes = {
     name: PropTypes.string.isRequired,
