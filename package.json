@@ -1,6 +1,6 @@
 {
   "name": "wikom-form",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "main": "lib/index.js",
   "module": "src/index.js",
   "repository": "git@github.com:Wikom/wikom-form.git",
