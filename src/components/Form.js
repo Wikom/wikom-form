@@ -6,7 +6,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {reduxForm} from 'redux-form'
 import {connect} from 'react-redux'
-import {asyncValidate} from '../actions'
+import {asyncValidate, handleChange} from '../actions'
 import {initialValuesFromURL} from '../helpers'
 import findInObject from 'find-in-object'
 import {reset} from 'redux-form'
@@ -63,7 +63,8 @@ const mapState = (state, {name, checkUrl, initialValues}) => {
         formValues: findInObject('form.' + name + '.values', state),
         initialValues: Object.assign({}, initialValuesFromURL(name), initialValues),
         asyncValidate: checkUrl ? asyncValidate({name, url: checkUrl}) : false,
-        onChange: checkUrl ? asyncValidate({name, url: checkUrl}) : false
+        onChange: checkUrl ? handleChange({name, url: checkUrl}) : false
+        // onChange: checkUrl ? asyncValidate({name, url: checkUrl}) : false
     }
 };
 

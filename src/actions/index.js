@@ -4,7 +4,9 @@
 
 import * as types from './actionTypes'
 import asyncValidate from './asyncValidate'
-import clearPositionFields from './clearPositionFields'
+import clearFields from './clearFields'
+import multiChange from './multiChange'
+import handleChange from './handleChange'
 import * as formErrorsActions from './formErrorsActions'
 
-export {types, asyncValidate, clearPositionFields, formErrorsActions}
+export {types, asyncValidate, clearFields, multiChange, handleChange, formErrorsActions}
