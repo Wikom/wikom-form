@@ -4,7 +4,7 @@
 
 import React from 'react'
 import TinyMCE from 'react-tinymce'
-import './TinyMCEComponent.css'
+import '../../../css/TinyMCEComponent.css'
 
 const TinyMCEComponent = ({input: {name, value, ...input}, disabled, ...props}) => {
 
