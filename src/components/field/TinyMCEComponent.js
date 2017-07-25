@@ -3,10 +3,10 @@
  */
 
 import React from 'react'
-import PropTypes from 'prop-types'
 import TinyMCE from 'react-tinymce'
+import './TinyMCEComponent.css'
 
-const TinyMCEComponent = ({input: {name, value, ...input}, meta, disabled, inline, ...props}) => {
+const TinyMCEComponent = ({input: {name, value, ...input}, disabled, ...props}) => {
 
     if (disabled === true) {
         return (
@@ -17,26 +17,26 @@ const TinyMCEComponent = ({input: {name, value, ...input}, meta, disabled, inlin
         );
     }
 
-    return (
-        <TinyMCE
-            {...props}
-            name={name}
-            content={value}
-            onBlur={(e) => input.onBlur(e.target.getContent())}
-            config={{
-                inline: inline,
-                menubar: false,
-                toolbar: 'bold italic underline | alignleft aligncenter alignright ',
-                height: 150,
-                statusbar: true,
-            }}
-        />
+    return (<div className="wikom-form__tinymcewrapper">
+            <TinyMCE
+                {...props}
+                name={name}
+                content={value}
+                onBlur={(e) => input.onBlur(e.target.getContent())}
+                config={{
+                    inline: true,
+                    menubar: false,
+                    toolbar: 'bold italic underline | alignleft aligncenter alignright ',
+                    height: 150,
+                    statusbar: true,
+                }}
+            />
+        </div>
     );
 };
 
 TinyMCEComponent.defaultProps = {
-    disabled: false,
-    inline: false
+    disabled: false
 };
 
-export default TinyMCEComponent
+export default TinyMCEComponent;
