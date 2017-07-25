@@ -3,6 +3,7 @@
  */
 
 import React from 'react'
+import PropTypes from 'prop-types'
 import TinyMCE from 'react-tinymce'
 import '../../../css/TinyMCEComponent.css'
 
