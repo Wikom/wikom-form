@@ -3,7 +3,6 @@
  */
 
 import React from 'react'
-import PropTypes from 'prop-types'
 import TinyMCE from 'react-tinymce'
 
 const TinyMCEComponent = ({input: {name, value, ...input}, meta, disabled, inline, ...props}) => {
