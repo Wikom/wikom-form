@@ -5,9 +5,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import TinyMCE from 'react-tinymce'
-import '../../../css/TinyMCEComponent.css'
 
-const TinyMCEComponent = ({input: {name, value, ...input}, disabled, ...props}) => {
+const TinyMCEComponent = ({input: {name, value, ...input}, meta, disabled, inline, ...props}) => {
 
     if (disabled === true) {
         return (
@@ -18,26 +17,26 @@ const TinyMCEComponent = ({input: {name, value, ...input}, disabled, ...props}) 
         );
     }
 
-    return (<div className="wikom-form__tinymcewrapper">
-            <TinyMCE
-                {...props}
-                name={name}
-                content={value}
-                onBlur={(e) => input.onBlur(e.target.getContent())}
-                config={{
-                    inline: true,
-                    menubar: false,
-                    toolbar: 'bold italic underline | alignleft aligncenter alignright ',
-                    height: 150,
-                    statusbar: true,
-                }}
-            />
-        </div>
+    return (
+        <TinyMCE
+            {...props}
+            name={name}
+            content={value}
+            onBlur={(e) => input.onBlur(e.target.getContent())}
+            config={{
+                inline: inline,
+                menubar: false,
+                toolbar: 'bold italic underline | alignleft aligncenter alignright ',
+                height: 150,
+                statusbar: true,
+            }}
+        />
     );
 };
 
 TinyMCEComponent.defaultProps = {
-    disabled: false
+    disabled: false,
+    inline: false
 };
 
-export default TinyMCEComponent;
+export default TinyMCEComponent
