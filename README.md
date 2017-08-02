@@ -1,11 +1,11 @@
-#wikom-form
+# wikom-form
 
 wikom-form extends redux-form, 
 implementing some additional functions,
 form fields and offers automatic form submitting and check.
 
 
-##Installation
+## Installation
 
 Add wikom-form to your js project with yarn:
 
@@ -19,7 +19,7 @@ npm install --save git+https://github.com/Wikom/wikom-form.git
 ```
 Remember to include all dependencies as well. 
 
-###important:
+### important:
 Using wikom-form features such as FormError-Rendering, form-check functions and more,
  don't forget to add formErrorsReducer to your rootReducer:
 
@@ -33,10 +33,10 @@ import {formErrorsReducer} from 'wikom-form'
 });
 ```
 
-##Form components
+## Form components
 Both form components, Form and SimpleForm [...]
 
-###Form
+### Form
 implements and extends reduxForm component, offers automatic form submission and form check
 
 | property (*required)| type | description |
@@ -48,7 +48,7 @@ implements and extends reduxForm component, offers automatic form submission and
 
 
 
-###SimpleForm
+### SimpleForm
 implements and extends reduxForm component, offers automatic form check (no submit handling)
 
 | property (*required)| type | description |
@@ -56,7 +56,7 @@ implements and extends reduxForm component, offers automatic form check (no subm
 | name* | string | identifies form for state keys |
 | checkUrl | string/null | form-check route. If set: wikom-form checks form content on change. <br />*default: null, no form check* |
 
-###form components usage
+### form components usage
 
 ```javascript
 import React from 'react'
@@ -82,7 +82,7 @@ const MyForm = () =>
 export default MyForm;
 ```
 
-####parameters passed
+#### parameters passed
 
 | name (*only&nbsp;Form)| type | description |
 |---|---|---|
@@ -96,10 +96,10 @@ export default MyForm;
 | submitting* | function | returns **true** if submission progress is triggered |
 
 
-##Form field components
+## Form field components
 wikom-form offers different extended form fields
 
-###SelectInput / VirtualizedSelectInput / Select
+### SelectInput / VirtualizedSelectInput / Select
 implements more complex select components basing on `react-select / react-virtualized-select.`<br />
 `Select` renders one of these components, based on number of options submitted.
 
@@ -111,7 +111,7 @@ implements more complex select components basing on `react-select / react-virtua
 | placeholder           | string    | shown when no option is selected |
 
 
-###SelectClassic
+### SelectClassic
 renders classic HTML select Field,
 options are converted to `<option>` tags
 
@@ -122,7 +122,7 @@ options are converted to `<option>` tags
 | options*              | array/object | lists selectable options |
 
 
-###Datepicker
+### Datepicker
 extends `react-datepicker` component
 
 | property (*required)  | type      | description |
@@ -134,7 +134,7 @@ extends `react-datepicker` component
 | openToDate            | string    | latest selectable date, format interpreted by `moment.js` |
 
 
-###TinyMCEComponent
+### TinyMCEComponent
 extends `react-tinymce` component
 
 | property (*required)  | type      | description |
@@ -144,7 +144,7 @@ extends `react-tinymce` component
 | inline                | boolean   | TinyMCE can run in inline mode. Toolbar is hidden if field is not active in inline mode |
 
 
-##FieldError component
+## FieldError component
 if form field has errors (result from async validation), FieldError component will display the error message with 
 level-depending css-class:
 
@@ -155,10 +155,10 @@ level-depending css-class:
 | errors      | form-error text-danger |
 | fatal       | form-error text-danger form-error--fatal |
 
-##Actions
+## Actions
 *wikom-form* comes with different actions, helping you to change form fields and state
 
-###clearFields
+### clearFields
 dispatched to clear multiple form fields (values)
 
 | property (*required)  | type      | description |
@@ -167,7 +167,7 @@ dispatched to clear multiple form fields (values)
 | fields*               | array     | the names (keys) of form fields you want to clear |
 
 
-###multiChange
+### multiChange
 dispatched to change multiple form fields (values)
 
 | property (*required)  | type      | description |
@@ -175,7 +175,7 @@ dispatched to change multiple form fields (values)
 | form*                 | string    | name (key) of form you want to clear fields in |
 | fields*               | object    | key => value of the of form fields you want to change with corresponding values |
 
-###asyncValidate
+### asyncValidate
 creates post request to checkUrl given. Also stops previous check request if still running.
 
 | property (*required)  | type      | description |
@@ -184,7 +184,7 @@ creates post request to checkUrl given. Also stops previous check request if sti
 | url*                  | string    | URL for check request |
 
 
-###handleChange
+### handleChange
 default action for form state change - triggers *asyncValidate* **with timeout**
 (so not every *key down* triggers an online request instantaneously)
 
