@@ -25,7 +25,6 @@ const VirtualizedSelectInput = (props) => {
     />;
 };
 
-
 VirtualizedSelectInput.propTypes = {
     input: PropTypes.object,
     options: PropTypes.array,
