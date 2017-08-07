@@ -3,6 +3,7 @@
  */
 
 import React from 'react'
+import findInObject from 'find-in-object'
 
 const FormErrors = (errors) => {
     const FieldError = function ({name}) {
@@ -25,9 +26,47 @@ const FormErrors = (errors) => {
         return null;
     };
 
+    const hasError = (name) => {
+        return errors &&
+            (errors.hasOwnProperty('fatal') && errors.fatal[name] || false) ||
+            (errors.hasOwnProperty('errors') && errors.errors[name] || false);
+    };
+
+    const FormGroup1 = ({errorFor, children}) => {
+        let hasErrors = false;
+        console.log('FormGroup', errorFor, typeof errorFor);
+
+        if (typeof errorFor == "string") {
+            hasErrors = hasError(errorFor);
+        }
+
+        if (typeof errorFor == "object") {
+            errorFor.map(function (key) {
+                hasErrors = hasErrors || hasError(key);
+            });
+        }
+
+        return (
+            <div className={'form-group' + (hasErrors ? ' has-error' : null)}>
+                {children}
+            </div>
+        );
+    };
+
+    const FormGroup = ({errorFor, children}) => {
+console.log('no matter');
+        return (
+            <div className={'form-group' + (1 ? ' has-error' : null)}>
+                {React.cloneElement(children)}
+            </div>
+        );
+    };
+
+
     return {
         FieldError: FieldError,
         RenderError: FieldError,
+        FormGroup: FormGroup,
 
         //hat schwerwiegenden fehler
         hasErrors: function () {

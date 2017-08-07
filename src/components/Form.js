@@ -50,13 +50,14 @@ const FormWrapper = reduxForm({
 })(Form);
 
 const mapState = (state, {name, checkUrl, initialValues}) => {
-    const {FieldError, hasErrors, isValidated} = FormErrors(findInObject('formErrors.' + name + '.data', state));
+    const {FieldError, FormGroup, hasErrors, isValidated} = FormErrors(findInObject('formErrors.' + name + '.data', state));
     const submitting = (isValidated() && ((findInObject('form.' + name + '.asyncValidating', state) === true))) ||
         findInObject('form.' + name + '.submitting', state);
 
     return {
         form: name,
         FieldError,
+        FormGroup,
         hasErrors,
         isValidated,
         submitting,
