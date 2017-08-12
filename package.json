@@ -1,6 +1,6 @@
 {
   "name": "wikom-form",
-  "version": "2.2.3",
+  "version": "2.2.4",
   "main": "lib/index.js",
   "module": "src/index.js",
   "repository": "git@github.com:Wikom/wikom-form.git",
@@ -12,14 +12,14 @@
     "dist"
   ],
   "dependencies": {
+    "find-in-object": "https://github.com/Wikom/find-in-object.git",
     "moment": "^2.18.1",
     "query-string": "^4.3.2",
     "react-datepicker": "^0.48.0",
     "react-select": "^1.0.0-rc.3",
     "react-tinymce": "^0.5.1",
     "react-virtualized-select": "^2.3.0",
-    "redux-form": "^6.7.0",
-    "find-in-object": "https://github.com/Wikom/find-in-object.git",
+    "redux-form": "^7.0.3",
     "wikom-data": "https://github.com/Wikom/wikom-data.git"
   },
   "devDependencies": {
