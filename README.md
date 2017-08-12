@@ -96,6 +96,34 @@ export default MyForm;
 | submitting* | function | returns **true** if submission progress is triggered |
 
 
+## Server response expected
+
+### for check
+server response may have the following type *(JSON)*:
+
+```json
+{
+    "data": {
+        "fatal": {
+            "form-field-key-one":
+                ["Error message"],
+            "form-field-key-two":
+                ["Another error message"]
+        },
+        "errors": {
+             // ...
+        },
+        "warnings": {
+             // ...
+        },
+        "infos": {
+             // ...
+        }
+    }
+}
+```
+
+
 ## Form field components
 wikom-form offers different extended form fields
 
