@@ -46,7 +46,7 @@ Form.propTypes = {
 };
 
 const FormWrapper = reduxForm({
-    asyncBlurFields: ['-']
+    shouldAsyncValidate: ({trigger}) => trigger === 'submit'
 })(Form);
 
 const mapState = (state, {name, checkUrl, initialValues}) => {
@@ -64,7 +64,6 @@ const mapState = (state, {name, checkUrl, initialValues}) => {
         initialValues: Object.assign({}, initialValuesFromURL(name), initialValues),
         asyncValidate: checkUrl ? asyncValidate({name, url: checkUrl}) : false,
         onChange: checkUrl ? handleChange({name, url: checkUrl}) : false
-        // onChange: checkUrl ? asyncValidate({name, url: checkUrl}) : false
     }
 };
 
