@@ -1,23 +1,23 @@
 import {setFormErrors} from "./formErrorsActions";
 import {actions} from 'wikom-data'
 
-let runningCheck = null;
+let runningCheck = {};
 
 const checkData = ({name, url}) => (values, dispatch) => {
-    if (runningCheck) {
-        runningCheck.cancel();
+    if (runningCheck[name]) {
+        runningCheck[name].cancel();
     }
 
     const req = actions.post({url, data: values});
-    runningCheck = req
+    runningCheck[name] = req
         .then(result => {
             dispatch(setFormErrors(name, result.body));
-            runningCheck = null;
+            delete runningCheck[name];
         });
 
-    runningCheck.cancel = () => req.abort();
+    runningCheck[name].cancel = () => req.abort();
 
-    return runningCheck;
+    return runningCheck[name];
 };
 
 export default checkData;
