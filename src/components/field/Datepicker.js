@@ -36,7 +36,7 @@ const Datepicker = ({input: {name, value, ...input}, disabled, dateFormat, openT
     };
 
     value = value
-        ? moment.utc(value, [dateFormat, 'YYYY-MM-DD'], true)
+        ? moment.utc(value, [dateFormat, 'YYYY-MM-DD', moment.ISO_8601], true)
         : null;
     value = (moment.isMoment(value) && value.isValid())
         ? value
@@ -44,7 +44,7 @@ const Datepicker = ({input: {name, value, ...input}, disabled, dateFormat, openT
 
     if (disabled) {
         return <div className="input-lookalike">
-            {moment.utc(value, [dateFormat, 'YYYY-MM-DD'], true).format(dateFormat)}
+            {moment.utc(value, [dateFormat, 'YYYY-MM-DD', moment.ISO_8601], true).format(dateFormat)}
         </div>;
     }
 
@@ -62,7 +62,7 @@ const Datepicker = ({input: {name, value, ...input}, disabled, dateFormat, openT
     if (openToDate !== null) {
         props.openToDate = (moment.isMoment(value) && value.isValid())
             ? value
-            : moment.utc(openToDate, [dateFormat, 'YYYY-MM-DD'], true);
+            : moment.utc(openToDate, [dateFormat, 'YYYY-MM-DD', moment.ISO_8601], true);
     }
 
     return <Picker {...props}/>;
