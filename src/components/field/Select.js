@@ -23,12 +23,14 @@ const Select = ({options, ...props}) => {
 };
 
 Select.defaultProps = {
-    placeholder: 'Bitte auswählen...'
+    placeholder: 'Bitte auswählen...',
+    noResultsText: 'Kein Ergebnis gefunden'
 };
 
 Select.propTypes = {
     options: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
-    placeholder: PropTypes.node
+    placeholder: PropTypes.node,
+    noResultsText: PropTypes.node
 };
 
 export default Select;
