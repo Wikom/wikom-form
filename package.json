@@ -1,6 +1,6 @@
 {
   "name": "wikom-form",
-  "version": "2.3.3",
+  "version": "2.3.4",
   "main": "lib/index.js",
   "module": "src/index.js",
   "repository": "git@github.com:Wikom/wikom-form.git",
@@ -18,7 +18,7 @@
     "react-datepicker": "^0.48.0",
     "react-select": "^1.0.0-rc.3",
     "react-tinymce": "^0.5.1",
-    "react-virtualized-select": "^2.3.0",
+    "react-virtualized-select": "^3.1.0",
     "redux-form": "^7.0.3",
     "wikom-data": "https://github.com/Wikom/wikom-data.git"
   },
