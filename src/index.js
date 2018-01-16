@@ -11,6 +11,7 @@ import SelectInput from './components/field/SelectInput'
 import TinyMCEComponent from './components/field/TinyMCEComponent'
 import VirtualizedSelectInput from './components/field/VirtualizedSelectInput'
 import Datepicker from './components/field/Datepicker'
+import Bool from './components/field/Bool'
 import formErrorsReducer from './reducers/formErrorsReducer'
 import {clearFields, multiChange} from './actions'
 import * as formErrorsActions from './actions/formErrorsActions'
@@ -26,6 +27,7 @@ export {
     VirtualizedSelectInput,
     TinyMCEComponent,
     Datepicker,
+    Bool,
     clearFields,
     multiChange,
     formErrorsActions,

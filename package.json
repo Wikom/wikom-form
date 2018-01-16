@@ -1,6 +1,6 @@
 {
   "name": "wikom-form",
-  "version": "2.3.5",
+  "version": "2.3.6",
   "main": "lib/index.js",
   "module": "src/index.js",
   "repository": "git@github.com:Wikom/wikom-form.git",
@@ -12,6 +12,7 @@
     "dist"
   ],
   "dependencies": {
+    "classnames": "^2.2.5",
     "find-in-object": "https://github.com/Wikom/find-in-object.git",
     "moment": "^2.18.1",
     "query-string": "^4.3.2",
@@ -35,8 +36,8 @@
   },
   "peerDependencies": {
     "prop-types": "^15.5.7",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
     "react-redux": "^5.0.2",
     "react-router-redux": "^5.0.0-alpha.4",
     "redux": "^3.6.0"
