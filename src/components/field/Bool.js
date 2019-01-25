@@ -26,22 +26,23 @@ const Bool = ({input, withNull, className, ...rest}) => {
                     value={input.value}
                 />
                 <div
+                    className={classnames(inputClassName)}
+                    style={{margin: '4px 12px 4px 0'}}
                     onClick={changeValue}
+                />
+                <div
+                    style={{
+                        height: '36px',
+                        lineHeight: '36px'
+                    }}
                 >
-                    <div
-                        className={classnames(inputClassName)}
-                        style={{margin: '4px 12px 4px 0'}}
-                    />
-                    <div
-                        style={{
-                            height: '36px',
-                            lineHeight: '36px'
-                        }}
+                    <span
+                        onClick={changeValue}
                     >
                         {isTrue && 'ja'}
                         {isFalse && 'nein'}
                         {withNull && !isTrue && !isFalse && 'unbestimmt'}
-                    </div>
+                    </span>
                 </div>
             </fieldset>
         </div>
