@@ -10,7 +10,6 @@ import SelectClassic from './components/field/SelectClassic'
 import SelectInput from './components/field/SelectInput'
 import TinyMCEComponent from './components/field/TinyMCEComponent'
 import VirtualizedSelectInput from './components/field/VirtualizedSelectInput'
-import Datepicker from './components/field/Datepicker'
 import Bool from './components/field/Bool'
 import formErrorsReducer from './reducers/formErrorsReducer'
 import {clearFields, multiChange} from './actions'
@@ -26,7 +25,6 @@ export {
     SelectInput,
     VirtualizedSelectInput,
     TinyMCEComponent,
-    Datepicker,
     Bool,
     clearFields,
     multiChange,
