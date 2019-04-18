@@ -14,29 +14,26 @@ module.exports = {
         umdNamedDefine: true
     },
     module: {
-        loaders: [
+        rules: [
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                loader: 'babel-loader'
+                use: 'babel-loader'
             },
             {
                 test: /\.css$/,
-                loaders: ["style", "css"]
+                use: ["style-loader", "css-loader"]
             }
         ]
     },
-    debug: true,
     devtool: 'source-map',
     externals: {
-        "moment": "moment",
         "prop-types": "prop-types",
         "query-string": "query-string",
         "react": "react",
         "react-dom": "react-dom",
         "react-redux": "react-redux",
         "react-router-redux": "react-router-redux",
-        "react-datepicker": "react-datepicker",
         "react-select": "react-select",
         "react-tinymce": "react-tinymce",
         "react-virtualized-select": "react-virtualized-select",
