@@ -2628,9 +2628,9 @@ wide-align@^1.1.0:
   dependencies:
     string-width "^1.0.2 || 2"
 
-"wikom-data@https://github.com/Wikom/wikom-data.git#v1.8.0":
-  version "1.8.0"
-  resolved "https://github.com/Wikom/wikom-data.git#7954dae5d57ed0cd4979759d451ce8470283821f"
+"wikom-data@https://github.com/Wikom/wikom-data.git#v1.8.1":
+  version "1.8.1"
+  resolved "https://github.com/Wikom/wikom-data.git#3bcb3593594539fa2dc2acb18bf087e659e2f24f"
   dependencies:
     file-saver "^2.0.2"
     find-in-object "https://github.com/Wikom/find-in-object.git#v1.2.0"
