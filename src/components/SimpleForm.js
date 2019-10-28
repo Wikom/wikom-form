@@ -8,7 +8,7 @@ import {reduxForm} from 'redux-form'
 import {connect} from 'react-redux'
 import {asyncValidate} from '../actions'
 import {initialValuesFromURL} from '../helpers'
-import findInObject from 'find-in-object'
+import findInObject from '@wikom/find-in-object'
 import {goBack} from 'react-router-redux'
 
 class SimpleForm extends React.Component {

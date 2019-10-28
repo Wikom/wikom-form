@@ -3,7 +3,7 @@
  */
 
 import {setFormErrors} from "./formErrorsActions";
-import {actions} from 'wikom-data'
+import {actions} from '@wikom/wikom-data'
 
 let timeout = null;
 let runningCheck = {};
