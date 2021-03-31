@@ -862,10 +862,10 @@
   dependencies:
     "@wikom/with-tooltip" "^1.4.0"
 
-"@wikom/wikom-data@^1.9.0":
-  version "1.9.5"
-  resolved "https://registry.yarnpkg.com/@wikom/wikom-data/-/wikom-data-1.9.5.tgz#8bb2fab82b0459918bd69d9c51582bb69ce37588"
-  integrity sha512-laz1j1kzl3Zq0h7NMFrSbrks4jzy5hEnzFojO+00Gd0GhgUk6rlfCrUVmPjzBADE5YyVOieDMI60+Vl5TMa/FQ==
+"@wikom/wikom-data@^1.9.8":
+  version "1.9.8"
+  resolved "https://registry.yarnpkg.com/@wikom/wikom-data/-/wikom-data-1.9.8.tgz#4328073feeb41cea485b75b25f0f0cec4d997947"
+  integrity sha512-3uYhMR4zCttxfxgw5psPRlZj+vpwUftjoPquM39TwH6pzD3P41MMDYBb3pi5xjIAaP95pCmLlkxXkukbwYbMjg==
   dependencies:
     "@wikom/find-in-object" "^1.3.3"
     "@wikom/react-loading" "^1.3.0"
