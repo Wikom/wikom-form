@@ -843,40 +843,40 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@wikom/find-in-object@^1.3.3":
+"@wikom/find-in-object@^1.3.6":
+  version "1.3.6"
+  resolved "https://registry.yarnpkg.com/@wikom/find-in-object/-/find-in-object-1.3.6.tgz#682813a9ec89e6da5fcc59c22a0be45b1a1f303b"
+  integrity sha512-Yj8K/rnapKTAwGrkeaxFCx/FW32jW5yfos3Yy3BnNrmVsiL43E5AGqmrpp3RPoVzb8NPEp13Xj074X3bUf9bkA==
+
+"@wikom/react-loading@^1.3.3":
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/@wikom/react-loading/-/react-loading-1.3.3.tgz#80206752390bd0ffce74c3a5ddc6b0acecf99c71"
+  integrity sha512-Gr7dh59jbjvT3nKOks+uFCsrfcOsTwqLiy6PYhOQhQuk+XVvdPLCYQ5h6jax5r1drXs+koVnGP2rXZPyYSF2ow==
+  dependencies:
+    "@wikom/react-symbol" "^1.3.4"
+
+"@wikom/react-symbol@^1.3.4":
   version "1.3.4"
-  resolved "https://registry.yarnpkg.com/@wikom/find-in-object/-/find-in-object-1.3.4.tgz#d0dbee3edaeedf07b4144aec48ef6c9651141acf"
-  integrity sha512-tzWtvPUXUY4D+jb2rHUwLUklveDc1ugNpYXJ3e02yxVqMR0e23TqyGhfgiBR2+46Nh20E6ttolQnZbUZaGyl8Q==
-
-"@wikom/react-loading@^1.3.0":
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/@wikom/react-loading/-/react-loading-1.3.1.tgz#515422731a973cbdfd9e00622aa989ae5715532c"
-  integrity sha512-9oP+BT8nN4Clz8U0R3DLP5WWWWDW7lMUyi9NwmsjFF7rHyO5NNNlYZ/BmFnIQv4Xz4JFWsC1W7y8A7fR2gFI7A==
+  resolved "https://registry.yarnpkg.com/@wikom/react-symbol/-/react-symbol-1.3.4.tgz#245ef487b84ccc20043b94373cf4cc6a53daa1a3"
+  integrity sha512-UX483Ng27RETPptOP5Uw9z3lTg7lduZ6b+rPFThlm/DkO6EGUWxz5R0pa0T7f0MfOoq9vBYlB16LvWrhAFbtGw==
   dependencies:
-    "@wikom/react-symbol" "^1.3.1"
+    "@wikom/with-tooltip" "^1.4.3"
 
-"@wikom/react-symbol@^1.3.1":
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/@wikom/react-symbol/-/react-symbol-1.3.2.tgz#618d281db14b24405f01805a6c146b3ff4d5ad50"
-  integrity sha512-joFAMicU82OVWBy9MIcCdCluVc/OfI+/bxBM+aOuSF/OAYIxlXlwOtUEemJuLXGHijaKJlIMjVuKcJbBCFmzKw==
+"@wikom/wikom-data@^1.9.9":
+  version "1.9.9"
+  resolved "https://registry.yarnpkg.com/@wikom/wikom-data/-/wikom-data-1.9.9.tgz#8bc4ec7b3be3fc6cecdd994c5a19ae47ccf96e86"
+  integrity sha512-W8Djbci/Uj63FyYB29WcBmwP4u6Rm+AaFi0EYvc97MUtws9nBgTUFZ3ARSNGKh05XfpOMbRNG1IczjYcioVTRQ==
   dependencies:
-    "@wikom/with-tooltip" "^1.4.0"
-
-"@wikom/wikom-data@^1.9.8":
-  version "1.9.8"
-  resolved "https://registry.yarnpkg.com/@wikom/wikom-data/-/wikom-data-1.9.8.tgz#4328073feeb41cea485b75b25f0f0cec4d997947"
-  integrity sha512-3uYhMR4zCttxfxgw5psPRlZj+vpwUftjoPquM39TwH6pzD3P41MMDYBb3pi5xjIAaP95pCmLlkxXkukbwYbMjg==
-  dependencies:
-    "@wikom/find-in-object" "^1.3.3"
-    "@wikom/react-loading" "^1.3.0"
-    "@wikom/react-symbol" "^1.3.1"
+    "@wikom/find-in-object" "^1.3.6"
+    "@wikom/react-loading" "^1.3.3"
+    "@wikom/react-symbol" "^1.3.4"
     file-saver "^2.0.2"
     superagent "^5.1.0"
 
-"@wikom/with-tooltip@^1.4.0":
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/@wikom/with-tooltip/-/with-tooltip-1.4.1.tgz#7596d3ed23686da0ec0df7219e1978215cfd575e"
-  integrity sha512-uRRwCVc/xR3c5kGhBY2TNQ4OJvUW7nqLALH4ovBpMnRpCdxrrSo7nJIhaQ29OMIfxkC8YeAyMb3C4QuX8FE84Q==
+"@wikom/with-tooltip@^1.4.3":
+  version "1.4.3"
+  resolved "https://registry.yarnpkg.com/@wikom/with-tooltip/-/with-tooltip-1.4.3.tgz#c377c24825cfb12090fba410a5bec2c0849d8c7c"
+  integrity sha512-XUb1dub2Mk9oP9m8FuRTgluZKyi2dmQguMPVxtsk8Cgx35m8htBzxh2KofC9J98dOxnNR1b8WEdthFHzVUCTog==
   dependencies:
     react-tooltip "^3.11.1"
     uuid "^3.3.3"
